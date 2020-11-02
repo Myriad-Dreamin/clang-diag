@@ -157,6 +157,12 @@ int main(int argc, const char **argv) {
             "verbose", llvm::cl::cat(diag_opts_cat),
             llvm::cl::desc("see verbose info"));
 
+    llvm::cl::AddExtraVersionPrinter([&](llvm::raw_ostream &os) {
+        os <<
+           "clang-diag: https://github.com/Myriad-Dreamin/clang-diag\n"
+           "  clang-diag version " CLANG_DIAG_VERSION "\n";
+    });
+
     auto verbose_outs = [&]() -> llvm::raw_ostream & {
         if (verbose) {
             return llvm::outs();
