@@ -1,0 +1,14 @@
+.idea
+*.7z
+*compile_commands.json
+fps.parsed.json
+config.cmake
+diagnostics
+
+# build directories
+build
+cmake-build*
+__pycache__
+
+test
+test_main.c
